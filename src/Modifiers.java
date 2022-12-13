@@ -1,9 +1,8 @@
-import java.util.Random;
 
 public class Modifiers {
 
     // Checks the value of a stat to decide on a modifier.
-    public static int statModifiers(int statType, int value) {
+    public static int statModifiers(int value) {
         int mod = 100;
 
         if (value == 1) {

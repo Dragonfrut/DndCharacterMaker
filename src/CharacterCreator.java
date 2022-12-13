@@ -70,9 +70,9 @@ public class CharacterCreator {
 
         // Create character
         playerChar = new PlayerChar(name, health, str, dex, con, intel, wis, cha,
-                Modifiers.statModifiers(1, str), Modifiers.statModifiers(2, dex),
-                Modifiers.statModifiers(3, con), Modifiers.statModifiers(4, intel),
-                Modifiers.statModifiers(5, wis), Modifiers.statModifiers(6, cha));
+                Modifiers.statModifiers(str), Modifiers.statModifiers(dex),
+                Modifiers.statModifiers(con), Modifiers.statModifiers(intel),
+                Modifiers.statModifiers(wis), Modifiers.statModifiers(cha));
 
         // update the characters health
         playerChar.setHealth(Modifiers.healthCalc(level, playerClass, playerChar.getCon_mod()));
