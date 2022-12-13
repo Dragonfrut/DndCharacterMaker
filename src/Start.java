@@ -10,7 +10,7 @@ public class Start {
         String makeNew = scanner.nextLine();
 
         if (makeNew.equals("y") || makeNew.equals("yes")) {
-            CharacterCreator.characterCreator();
+            playerChar = CharacterCreator.characterCreator();
         }
 
         return playerChar;
