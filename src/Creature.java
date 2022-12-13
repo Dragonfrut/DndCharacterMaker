@@ -1,5 +1,4 @@
 public class Creature {
-
     private String name;
     private int health;
     private int str;
@@ -43,7 +42,6 @@ public class Creature {
 //        int wDamage =
 //    }
 
-
     public String getName() {
         return name;
     }
@@ -66,7 +64,7 @@ public class Creature {
 
     public void setStr(int str) {
         this.str = str;
-        this.str_mod = Modifiers.statModifiers(1, str);
+        this.str_mod = Modifiers.statModifiers(str);
     }
 
     public int getDex() {
@@ -75,7 +73,7 @@ public class Creature {
 
     public void setDex(int dex) {
         this.dex = dex;
-        this.dex_mod = Modifiers.statModifiers(2, dex);
+        this.dex_mod = Modifiers.statModifiers(dex);
     }
 
     public int getCon() {
@@ -84,7 +82,7 @@ public class Creature {
 
     public void setCon(int con) {
         this.con = con;
-        this.con_mod = Modifiers.statModifiers(3, con);
+        this.con_mod = Modifiers.statModifiers(con);
     }
 
     public int getIntel() {
@@ -93,7 +91,7 @@ public class Creature {
 
     public void setIntel(int intel) {
         this.intel = intel;
-        this.intel_mod = Modifiers.statModifiers(4, intel);
+        this.intel_mod = Modifiers.statModifiers(intel);
     }
 
     public int getWis() {
@@ -102,7 +100,7 @@ public class Creature {
 
     public void setWis(int wis) {
         this.wis = wis;
-        this.wis_mod = Modifiers.statModifiers(5, wis);
+        this.wis_mod = Modifiers.statModifiers(wis);
     }
 
     public int getCha() {
@@ -111,7 +109,7 @@ public class Creature {
 
     public void setCha(int cha) {
         this.cha = cha;
-        this.cha_mod = Modifiers.statModifiers(6, cha);
+        this.cha_mod = Modifiers.statModifiers(cha);
     }
 
     public int getStr_mod() {
