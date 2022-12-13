@@ -15,6 +15,8 @@ public class Main {
         System.out.println("Your characters Wisdom is " + playerChar.getWis() + " with a modifier of " + playerChar.getWis_mod());
         System.out.println("Your characters Charisma is " + playerChar.getCha() + " with a modifier of " + playerChar.getCha_mod());
 
+        playerChar.attack(weapon, playerChar);
+        System.out.println("Current health is now " + playerChar.getHealth());
 
     }
 }

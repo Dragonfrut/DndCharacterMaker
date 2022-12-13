@@ -37,10 +37,14 @@ public class Creature {
         this.cha_mod = cha_mod;
     }
 
-//    public void attack(Weapon weapon, Creature target){
-//        int targHP = target.getHealth();
-//        int wDamage =
-//    }
+    public void attack(Weapon weapon, Creature target){
+        int maxDamage = weapon.getBaseDamage();
+        int damageDone = DiceRoller.diceRoll(maxDamage);
+        int initHealth = target.getHealth();
+        target.setHealth(target.getHealth() - damageDone);
+        System.out.println(target.getName() + " has been hit with " + weapon.getName() + " and took " + damageDone + " damage.");
+
+    }
 
     public String getName() {
         return name;
