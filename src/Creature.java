@@ -15,7 +15,9 @@ public class Creature {
     private int cha_mod;
 
     public Creature(){
-        System.out.println("Empty Creature constructor call");
+        new Creature("Peasant", 10, 10, 10, 10, 10, 10,
+                10, 0, 0, 0, 0, 0, 0);
+        System.out.println("Empty Creature constructor call, made a peasant");
     }
 
     public Creature(String name, int health, int str, int dex, int con, int intel,
