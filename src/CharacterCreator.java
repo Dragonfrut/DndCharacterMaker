@@ -8,12 +8,12 @@ public class CharacterCreator {
         Scanner scanner = new Scanner(System.in);
         int health = 0;
         int classNum;
-        int level = 1;
         String playerClass = "Class not Selected";
 
         // Collect players stats
         System.out.println("enter your characters name");
         String name = scanner.nextLine();
+        System.out.println("Please enter stats between 1 and 18");
         System.out.println("enter str");
         int str = scanner.nextInt();
         System.out.println("enter dex");
@@ -26,6 +26,8 @@ public class CharacterCreator {
         int wis = scanner.nextInt();
         System.out.println("enter cha");
         int cha = scanner.nextInt();
+        System.out.println("What level are you starting as? (1-20)");
+        int level = scanner.nextInt();
 
         // Get user to select a class. Repeat until a valid class is selected.
         do {
@@ -69,7 +71,7 @@ public class CharacterCreator {
         } while (!cSelected);
 
         // Create character
-        playerChar = new PlayerChar(name, health, str, dex, con, intel, wis, cha,
+        playerChar = new PlayerChar(name, level, playerClass, health, str, dex, con, intel, wis, cha,
                 Modifiers.statModifiers(str), Modifiers.statModifiers(dex),
                 Modifiers.statModifiers(con), Modifiers.statModifiers(intel),
                 Modifiers.statModifiers(wis), Modifiers.statModifiers(cha));
