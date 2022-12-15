@@ -141,4 +141,22 @@ public class Creature {
     public int getCha_mod() {
         return cha_mod;
     }
+
+    @Override
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", health=" + health +
+                ", str=" + str +
+                ", dex=" + dex +
+                ", con=" + con +
+                ", intel=" + intel +
+                ", wis=" + wis +
+                ", cha=" + cha +
+                ", str_mod=" + str_mod +
+                ", dex_mod=" + dex_mod +
+                ", con_mod=" + con_mod +
+                ", intel_mod=" + intel_mod +
+                ", wis_mod=" + wis_mod +
+                ", cha_mod=" + cha_mod;
+    }
 }
