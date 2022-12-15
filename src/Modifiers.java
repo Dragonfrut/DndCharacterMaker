@@ -2,43 +2,28 @@
 public class Modifiers {
 
     // Checks the value of a stat to decide on a modifier.
-    public static int statModifiers(int value) {
-        int mod = 100;
+    public static int statModifiers(int statValue) {
+        int mod = 9999;
 
-        if (value == 1) {
-            mod = -5;
-        } else if (value == 2 || value == 3) {
-            mod = -4;
-        } else if (value == 4 || value == 5) {
-            mod = -3;
-        } else if (value == 6 || value == 7) {
-            mod = -2;
-        } else if (value == 8 || value == 9) {
-            mod = -1;
-        } else if (value == 10 || value == 11) {
-            mod = 0;
-        } else if (value == 12 || value == 13) {
-            mod = 1;
-        } else if (value == 14 || value == 15) {
-            mod = 2;
-        } else if (value == 16 || value == 17) {
-            mod = 3;
-        } else if (value == 18 || value == 19) {
-            mod = 4;
-        } else if (value == 20 || value == 21) {
-            mod = 5;
-        } else if (value == 22 || value == 23) {
-            mod = 6;
-        } else if (value == 24 || value == 25) {
-            mod = 7;
-        } else if (value == 26 || value == 27) {
-            mod = 8;
-        } else if (value == 28 || value == 29) {
-            mod = 9;
-        } else if (value == 30) {
-            mod = 10;
+        switch (statValue){
+            case 1 -> mod = -5;
+            case 2,3 -> mod = -4;
+            case 4,5 -> mod = -3;
+            case 6,7 -> mod = -2;
+            case 8,9 -> mod = -1;
+            case 10,11 -> mod = 0;
+            case 12,13 -> mod = 1;
+            case 14,15 -> mod = 2;
+            case 16,17 -> mod = 3;
+            case 18,19 -> mod = 4;
+            case 20,21 -> mod = 5;
+            case 22,23 -> mod = 6;
+            case 24,25 -> mod = 7;
+            case 26,27 -> mod = 8;
+            case 28,29 -> mod = 9;
+            case 30 -> mod = 10;
+            default -> System.out.println("Illegal stat");
         }
-
         return mod;
     }
 
