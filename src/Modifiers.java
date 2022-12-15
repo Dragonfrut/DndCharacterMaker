@@ -34,54 +34,55 @@ public class Modifiers {
         int HitDEight = 8;
         int HitDSix = 6;
         int health = 0;
-        int hitDice = 0;
+        int hitDice = 1;
+        int diceRoll;
 
         switch (playerClass) {
             case "Barbarian" -> {
                 if (level == 1) {
                     health = HitDTwelve + con_mod;
-                } else {
+                } else if (level > 1){
+                    health = HitDTwelve + con_mod;
                     do {
                         hitDice++;
-                        health = HitDTwelve + con_mod;
-                        health = health + DiceRoller.diceRoll(HitDTwelve) + con_mod;
-                        System.out.println("health: " + health);
+                        diceRoll = DiceRoller.diceRoll(HitDTwelve);
+                        health = health + diceRoll + con_mod;
                     } while (hitDice < level);
                 }
             }
             case "Fighter", "Paladin", "Ranger" -> {
                 if (level == 1) {
                     health = HitDTen + con_mod;
-                } else {
+                } else if (level > 1){
+                    health = HitDTen + con_mod;
                     do {
                         hitDice++;
-                        health = HitDTen + con_mod;
-                        health = health + DiceRoller.diceRoll(HitDTen) + con_mod;
-                        System.out.println("health: " + health);
+                        diceRoll = DiceRoller.diceRoll(HitDTen);
+                        health = health + diceRoll + con_mod;
                     } while (hitDice < level);
                 }
             }
             case "Artificer", "Bard", "Cleric", "Druid", "Monk", "Rogue", "Warlock" -> {
                 if (level == 1) {
                     health = HitDEight + con_mod;
-                } else {
+                } else if (level > 1){
+                    health = HitDEight + con_mod;
                     do {
                         hitDice++;
-                        health = HitDEight + con_mod;
-                        health = health + DiceRoller.diceRoll(HitDEight) + con_mod;
-                        System.out.println("health: " + health);
+                        diceRoll = DiceRoller.diceRoll(HitDEight);
+                        health = health + diceRoll + con_mod;
                     } while (hitDice < level);
                 }
             }
             case "Wizard", "Sorcerer" -> {
                 if (level == 1) {
                     health = HitDSix + con_mod;
-                } else {
+                } else if (level > 1){
+                    health = HitDSix + con_mod;
                     do {
                         hitDice++;
-                        health = HitDSix + con_mod;
-                        health = health + DiceRoller.diceRoll(HitDSix) + con_mod;
-                        System.out.println("health: " + health);
+                        diceRoll = DiceRoller.diceRoll(HitDSix);
+                        health = health + diceRoll + con_mod;
                     } while (hitDice < level);
                 }
             }
