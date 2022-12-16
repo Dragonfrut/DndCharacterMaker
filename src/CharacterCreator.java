@@ -6,7 +6,7 @@ public class CharacterCreator {
         PlayerChar playerChar;
         boolean cSelected;
         Scanner scanner = new Scanner(System.in);
-        int health = 0;
+        int maxHealth = 0;
         int classNum;
         String playerClass = "Class not Selected";
 
@@ -71,13 +71,13 @@ public class CharacterCreator {
         } while (!cSelected);
 
         // Create character
-        playerChar = new PlayerChar(name, level, playerClass, health, str, dex, con, intel, wis, cha,
+        playerChar = new PlayerChar(name, level, playerClass, maxHealth, maxHealth, str, dex, con, intel, wis, cha,
                 Modifiers.statModifiers(str), Modifiers.statModifiers(dex),
                 Modifiers.statModifiers(con), Modifiers.statModifiers(intel),
                 Modifiers.statModifiers(wis), Modifiers.statModifiers(cha));
 
         // update the characters health
-        playerChar.setHealth(Modifiers.healthCalc(level, playerClass, playerChar.getCon_mod()));
+        playerChar.setMaxHealth(Modifiers.healthCalc(level, playerClass, playerChar.getCon_mod()));
         return playerChar;
 
     }

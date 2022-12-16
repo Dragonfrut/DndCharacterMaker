@@ -10,7 +10,7 @@ public class Main {
         System.out.println("class= " + playerChar.getPlayerClass() + " ,level= " + playerChar.getLevel());
 
         playerChar.attack(weapon, playerChar);
-        System.out.println("Current health is now " + playerChar.getHealth());
+        System.out.println("Current health is now " + playerChar.getCurrentHealth() + "/" + playerChar.getMaxHealth());
 
     }
 }

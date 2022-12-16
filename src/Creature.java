@@ -1,6 +1,7 @@
 public class Creature {
     private String name;
-    private int health;
+    private int maxHealth;
+    private int currentHealth;
     private int str;
     private int dex;
     private int con;
@@ -15,16 +16,17 @@ public class Creature {
     private int cha_mod;
 
     public Creature(){
-        new Creature("Peasant", 10, 10, 10, 10, 10, 10,
+        new Creature("Peasant", 10, 10, 10, 10, 10, 10, 10,
                 10, 0, 0, 0, 0, 0, 0);
         System.out.println("Empty Creature constructor call, made a peasant");
     }
 
-    public Creature(String name, int health, int str, int dex, int con, int intel,
+    public Creature(String name, int maxHealth, int currentHealth, int str, int dex, int con, int intel,
                     int wis, int cha, int str_mod, int dex_mod, int con_mod,
                     int intel_mod, int wis_mod, int cha_mod) {
         this.name = name;
-        this.health = health;
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
         this.str = str;
         this.dex = dex;
         this.con = con;
@@ -42,8 +44,8 @@ public class Creature {
     // currently acts as an unarmed strike
     public void attack(Creature target){
         int damageDone = 1 + getStr_mod();
-        int initHealth = target.getHealth();
-        target.setHealth(target.getHealth() - damageDone);
+        int initHealth = target.getCurrentHealth();
+        target.setCurrentHealth(target.getCurrentHealth() - damageDone);
         System.out.println(target.getName() + " has been hit and takes " + damageDone + " damage.");
     }
 
@@ -55,12 +57,20 @@ public class Creature {
         this.name = name;
     }
 
-    public int getHealth() {
-        return health;
+    public int getMaxHealth() {
+        return maxHealth;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
     }
 
     public int getStr() {
@@ -144,7 +154,7 @@ public class Creature {
     @Override
     public String toString() {
         return "name='" + name + '\'' +
-                ", health=" + health +
+                ", health=" + currentHealth + "/" + maxHealth +
                 ", str=" + str +
                 ", dex=" + dex +
                 ", con=" + con +
