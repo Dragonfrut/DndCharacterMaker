@@ -78,6 +78,7 @@ public class CharacterCreator {
 
         // update the characters health
         playerChar.setMaxHealth(Modifiers.healthCalc(level, playerClass, playerChar.getCon_mod()));
+        playerChar.setCurrentHealth(playerChar.getMaxHealth());
         return playerChar;
 
     }
