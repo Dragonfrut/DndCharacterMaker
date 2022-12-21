@@ -71,7 +71,7 @@ public class CharacterCreator {
         } while (!cSelected);
 
         // Create character
-        playerChar = new PlayerChar(name, level, playerClass, maxHealth, maxHealth, str, dex, con, intel, wis, cha,
+        playerChar = new PlayerChar(name, level, Modifiers.proBonus(level), playerClass, maxHealth, maxHealth, str, dex, con, intel, wis, cha,
                 Modifiers.statModifiers(str), Modifiers.statModifiers(dex),
                 Modifiers.statModifiers(con), Modifiers.statModifiers(intel),
                 Modifiers.statModifiers(wis), Modifiers.statModifiers(cha));
