@@ -15,7 +15,7 @@ public class Creature {
     private int wis_mod;
     private int cha_mod;
 
-    public Creature(){
+    public Creature() {
         new Creature("Peasant", 10, 10, 10, 10, 10, 10, 10,
                 10, 0, 0, 0, 0, 0, 0);
         System.out.println("Empty Creature constructor call, made a peasant");
@@ -42,7 +42,7 @@ public class Creature {
     }
 
     // currently acts as an unarmed strike
-    public void attack(Creature target){
+    public void attack(Creature target) {
         int damageDone = 1 + getStr_mod();
         int initHealth = target.getCurrentHealth();
         target.setCurrentHealth(target.getCurrentHealth() - damageDone);
